@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html> 
+<html lang="uk-UA">
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Країни - Grand Strategy Game</title>
+    <link rel="stylesheet" href="css/site.css" /> 
+</head>
+<body>
+<h1>Країни</h1>
+<p id="errorDB"></p>
+<h3>Додати</h3>
+<form action="javascript:void(0);" method="POST" onsubmit="addCountry()">
+    <input type="text" id="add-Name" placeholder="Нова країна">
+    <input type="text" id="add-LeaderName" placeholder="Лідер">
+    <input type="text" id="add-Block" placeholder="Фракція">
+    <input type="number" id="add-MilMight" placeholder="Військ. сила">
+    <input type="text" id="add-Continent" placeholder="Розташування">
+    <input type="submit" value="Додати"> 
+</form>
+<div id="editCountry" style="display: none">
+    <h3>Редагувати</h3> 
+    <form action="javascript:void(0);" onsubmit="updateCountry()">
+        <input type="hidden" id="edit-Id">
+        <input type="text" id="edit-Name" placeholder="Назва країни">
+        <input type="text" id="edit-LeaderName" placeholder="Ім'я лідера">
+        <input type="text" id="edit-Block" placeholder="Фракція">
+        <input type="number" id="edit-MilMight" placeholder="Військ. сила">
+        <input type="text" id="edit-Continent" placeholder="Розташування"> 
+        <input type="submit" value="Зберегти">
+        <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+    </form> 
+</div>
+<p id="counter"></p>
+<table> 
+    <tr>
+        <th>ID</th> 
+        <th>Країна</th>
+        <th>Лідер</th>
+        <th>Фракція</th>
+        <th>Сила</th>
+        <th>Розташування</th> 
+        <th></th> 
+        <th></th>
+    </tr>
+    <tbody id="countries"></tbody>
+</table> 
+
+<script src="js/lab2.js" asp-append-version="true"></script>
+<script type="text/javascript">
+    getCountries();
+</script>
+</body>
+</html>
